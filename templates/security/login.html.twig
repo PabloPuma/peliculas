@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+{#<form method="post">#}
+{#    {% if error %}#}
+{#        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#    {% endif %}#}
+
+{#    {% if app.user %}#}
+{#        <div class="mb-3">#}
+{#            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>#}
+{#        </div>#}
+{#    {% endif %}#}
+
+{#    <h1 class="h3 mb-3 font-weight-normal"> 😎 <i class="fa fa-user"> INGRESAR</i></h1>#}
+{#    <label for="inputUsername"> <H4>Nombre de Usuario</H4></label>#}
+{#    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>#}
+{#    <label for="inputPassword"><H4>Contraseña</H4></label>#}
+{#    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>#}
+
+{#    <input type="hidden" name="_csrf_token"#}
+{#           value="{{ csrf_token('authenticate') }}"#}
+{#    >#}
+
+
+{#        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
+{#        See https://symfony.com/doc/current/security/remember_me.html#}
+
+{#        <div class="checkbox mb-3">#}
+{#            <label>#}
+{#                <input type="checkbox" name="_remember_me"> Remember me#}
+{#            </label>#}
+{#        </div>#}
+
+
+{#    <button class="btn btn-lg btn-primary" type="submit">#}
+{#        Ingresar#}
+{#    </button>#}
+{#    <a class="btn btn-warning" href={{"registro"}}>Registrarse</a>#}
+{#</form>#}
+
+{#    -------------------------------#}
+
+    <div id="registrar">
+        <a href="./php/registro.php"</a>Registrarse</a>
+    </div> <!-- fin opcion-->
+
+    <div id="envoltura">
+        <div id="contenedor">
+
+            <div id="cabecera" >
+               <img src="{{ asset("img/logo.png")}}" alt="">
+            </div>
+
+            <div id="cuerpo">
+                <form id="form-login" action="" method="post" autocomplete="off">
+
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        {% if app.user %}
+                            <div class="mb-3">
+                                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                            </div>
+                        {% endif %}
+
+                        <h1 class="h3 mb-3 font-weight-normal"> 😎 <i class="fa fa-user"> INGRESAR</i></h1>
+                        <label for="inputUsername"> <H4>Nombre de Usuario</H4></label>
+                        <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+                        <label for="inputPassword"><H4>Contraseña</H4></label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+                        <input type="hidden" name="_csrf_token"
+                               value="{{ csrf_token('authenticate') }}"
+                        >
+
+
+                        {#        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
+                        {#        See https://symfony.com/doc/current/security/remember_me.html#}
+
+                        {#        <div class="checkbox mb-3">#}
+                        {#            <label>#}
+                        {#                <input type="checkbox" name="_remember_me"> Remember me#}
+                        {#            </label>#}
+                        {#        </div>#}
+
+                        <BR>
+                        <button class="btn btn-lg btn-primary" type="submit">
+                            Ingresar
+                        </button>
+                        <a class="btn btn-warning" href={{"registro"}}>Registrarse</a>
+            </div><!--fin cuerpo-->
+
+            <div id="pie">Sistema de Login Y Registro</div>
+        </div><!-- fin contenedor -->
+    </div><!--fin envoltura-->
+{% endblock %}
